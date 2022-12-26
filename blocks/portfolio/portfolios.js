@@ -9,12 +9,13 @@ import { motion } from "framer-motion";
 // motion varients
 import { portfolioCard } from "../../components/motionVarients/portfolioMotionVarients";
 // import custom hook
-import useScrollhidden from "../../hooks/useScrollhidden";
+import { useScrollhidden } from "../../hooks/useScrollhidden";
 
 export default function Portfolios() {
   let [quickview, setQuickview] = useAtom(projectQuickView);
   const [ctab, setCtab] = useAtom(currentTab);
   const [state, setState] = useState([]);
+  let [setFreezescroll] = useScrollhidden();
   // get data by filter
   useEffect(() => {
     setState(getData(ctab));
@@ -38,7 +39,7 @@ export default function Portfolios() {
             githublink={d.githubrepo}
             handleQuickView={() => {
               setQuickview(d);
-              useScrollhidden(true);
+              setFreezescroll(true);
             }}
           />
         </motion.div>

@@ -10,10 +10,11 @@ import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { drawerShow } from "../motionVarients/drawerMotionVarients";
 import CopyBtn from "../buttons/copyBtn";
 // custom hook
-import useScrollhidden from "../../hooks/useScrollhidden";
+import { useScrollhidden } from "../../hooks/useScrollhidden";
 
 export default function PortfolioQuickView() {
   let [obj, setObj] = useAtom(projectQuickView);
+  let [setFreezescroll] = useScrollhidden();
 
   return (
     obj && (
@@ -30,7 +31,7 @@ export default function PortfolioQuickView() {
             <button
               className="text-xl sm:text-2xl"
               onClick={() => {
-                useScrollhidden(false);
+                setFreezescroll(true);
                 setObj();
               }}
             >
