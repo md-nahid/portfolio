@@ -1,16 +1,24 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased font-inter;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* .hero_title {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(79 70 229);
+  -webkit-text-fill-color: transparent;
+} */
 
-* {
-  box-sizing: border-box;
+/* custom cursor  */
+@layer base {
+  .custom-cursor {
+    transition: width 0.3s ease, height 0.3s ease;
+  }
 }
