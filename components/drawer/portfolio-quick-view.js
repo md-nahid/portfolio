@@ -31,7 +31,7 @@ export default function PortfolioQuickView() {
             <button
               className="text-xl sm:text-2xl"
               onClick={() => {
-                setFreezescroll(true);
+                setFreezescroll(false);
                 setObj();
               }}
             >
